@@ -11,16 +11,18 @@ public class WindowsTests extends TestBase {
 
     @Test
     public void newTabButtonTest() {
-        app.windows().clickOnNewTabWindow();
+        app.windows().clickOnNewTab();
     }
 
     @Test
     public void newWindowTest() {
-
+        app.windows().clickOnNewWindow();
     }
 
+//+++++++++++++++++IT DOESN'T WORK+++++++++++++++++
     @Test
     public void NewWindowMessageTest() {
-
+        app.windows().catchNewWindowMessage();
+        app.stop();
     }
 }

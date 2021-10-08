@@ -10,6 +10,7 @@ public class HelperBase {
     public HelperBase(WebDriver wd) {
         this.wd = wd;
     }
+
     public void type(By locator, String text) {
         if (text != null) {
             click(locator);
@@ -17,7 +18,6 @@ public class HelperBase {
             wd.findElement(locator).sendKeys(text);
         }
     }
-
 
 
     public void click(By locator) {
@@ -39,9 +39,13 @@ public class HelperBase {
     }
 
 
-
-    public void hideFooter(){
+    public void hideFooter() {
         JavascriptExecutor js = (JavascriptExecutor) wd;
         js.executeScript("document.querySelector('footer').style.display='none';");
+    }
+
+    public void scroll(int x, int y) {
+        JavascriptExecutor js = (JavascriptExecutor) wd;
+        js.executeScript("window.scrollBy(" + x + "," + y + ")");
     }
 }

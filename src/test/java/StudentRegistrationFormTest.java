@@ -20,16 +20,14 @@ public class StudentRegistrationFormTest extends TestBase{
                     .email("john@mail.com")
                     .gender("Male")
                     .phone("1234567890")
-                    .birthday("25 05 1990")
+                    .birthday("25 5 1990")
                     .subject("Maths")
-                    .hobbies("Sport")
+                    .hobbies("Reading Music")
                     .address("Tel Aviv")
                     .state("NCR")
                     .city("Gurgaon");
 
             app.forms().fillForm(model);
             app.forms().submit();
-
-
     }
 }
