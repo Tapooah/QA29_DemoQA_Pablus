@@ -41,14 +41,36 @@ public class HelperStudentForm extends applications.HelperBase {
         typeBDayWithCalendar(By.id("dateOfBirthInput"), model.getBirthday());
         addSubjectByEnter(model.getSubject());
         selectHobbies(model.getHobbies());
+        chooseTheFile(model.getFile());
         type(By.id("currentAddress"), model.getAddress());
         typeState(model.getState());
+        typeCity(model.getCity());
+    }
+
+
+    private void typeCity(String city) {
+        click(By.xpath("//div[@id='city']//div[contains(@class,'css-1hwfws3')]"));
+        WebElement x = wd.findElement(By.id("react-select-4-input"));
+        x.sendKeys(city);
+        x.sendKeys(Keys.ENTER);
+//        pause(2000);
     }
 
     private void typeState(String state) {
 //        scroll(0, 40);
-        type(By.id("react-select-3-input"),state);
-        wd.findElement(By.id("react-select-3-input")).sendKeys(Keys.ENTER);
+//        type(By.xpath("react-select-3-input"),state);
+//        wd.findElement(By.id("react-select-3-input")).sendKeys(Keys.ENTER);
+        click(By.xpath("//div[@id='state']//div[contains(@class,'css-1hwfws3')]"));
+        WebElement x = wd.findElement(By.id("react-select-3-input")); //Thanks to Anna for this solution
+        x.sendKeys(state);
+        x.sendKeys(Keys.ENTER);
+//        pause(2000);
+    }
+
+    private void chooseTheFile(String file) {
+        WebElement upload = wd.findElement(By.id("uploadPicture"));
+//        upload.click();
+        upload.sendKeys(file);
     }
 
     private void selectHobbies(String hobby) {

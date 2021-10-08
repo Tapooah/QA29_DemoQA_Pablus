@@ -12,6 +12,7 @@ public class StudentForm {
     String address;
     String state;
     String city;
+    String file;
 
     public StudentForm firstName(String firstName) {
         this.firstName = firstName;
@@ -52,7 +53,10 @@ public class StudentForm {
         this.hobbies = hobbies;
         return this;
     }
-
+    public StudentForm file(String file) {
+        this.file=file;
+        return this;
+    }
     public StudentForm address(String address) {
         this.address = address;
         return this;
@@ -100,6 +104,8 @@ public class StudentForm {
         return hobbies;
     }
 
+    public String getFile(){return  file;}
+
     public String getAddress() {
         return address;
     }
@@ -111,4 +117,6 @@ public class StudentForm {
     public String getCity() {
         return city;
     }
+
+
 }
