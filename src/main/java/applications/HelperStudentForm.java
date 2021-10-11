@@ -57,7 +57,7 @@ public class HelperStudentForm extends applications.HelperBase {
     }
 
     private void typeState(String state) {
-//        scroll(0, 40);
+        scroll(0, 40);
 //        type(By.xpath("react-select-3-input"),state);
 //        wd.findElement(By.id("react-select-3-input")).sendKeys(Keys.ENTER);
         click(By.xpath("//div[@id='state']//div[contains(@class,'css-1hwfws3')]"));
